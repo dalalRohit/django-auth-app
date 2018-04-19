@@ -9,3 +9,4 @@ def index(request):
 
     temp=loader.get_template('auth/index.html')
     return render(request,temp)
+
