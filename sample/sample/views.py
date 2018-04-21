@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.template import loader
 from . import views
 from django.http import HttpResponse
+from django.contrib.auth.forms import UserCreationForm
 
 
 def index(request):
@@ -20,7 +21,10 @@ def login(request):
     })
 
 def register(request):
-    #return HttpResponse('<h2>Register page</h2>')
+    # return HttpResponse('<h2>Register page</h2>')
     return  render(request,'accounts/register.html',context={
         'title':"Register page"
     })
+    # form=UserCreationForm()
+    # args={'form':form}
+    # return render(request,'accounts/register.html',args)
