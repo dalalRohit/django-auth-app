@@ -32,17 +32,33 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
+          {% if user.is_authenticated %}
           <ul class="navbar-nav ml-auto">
 
             <li class="nav-item">
-              <a class="nav-link" href="accounts/register">Register</a>
+              <a class="nav-link" href="/accounts/register">Register</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="accounts/login">Login</a>
+              <a class="nav-link" href="/accounts/login">Login</a>
             </li>
 
           </ul>
+          {% else %}
+          <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item">
+              <a class="nav-link" href="/accounts/register">Register</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/accounts/login">Login</a>
+            </li>
+
+          </ul>
+          {% endif %}
+
+
         </div>
       </div>
     </nav>
